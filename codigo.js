@@ -13,10 +13,13 @@ function include( fileName ) {
 }
 
 function doPost( e ) {
-  var doc = DocumentApp.create('Mi primer documento');
-
-
-  var body = doc.getBody();
+  var documentId = "1kqN-XWI-0KT28fMdZtJ0-2glINUSCI-ZtAQioQJIz74";
+  var doc = DriveApp.getFileById(documentId);
+  var copyDocTemp = doc.makeCopy("Trabajo grupal");
+  
+  // Se necesita abrir el archivo copia
+  var copyDoc = DocumentApp.openById(copyDocTemp.getId());
+  var body = copyDoc.getBody();
 
   var email = e.parameter.email;
   var password = e.parameter.password;
@@ -28,6 +31,3 @@ function doPost( e ) {
   console.log(e);
 
 } 
-function myFunction() {
-  doc = DocumentApp.create('Mi primer documento');
-}

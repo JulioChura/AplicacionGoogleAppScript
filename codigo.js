@@ -21,6 +21,9 @@ function doPost( e ) {
   var copyDoc = DocumentApp.openById(copyDocTemp.getId());
   var body = copyDoc.getBody();
 
+  //Colocando secciones para datos
+  ModParagraphs(documentId);
+
   var email = e.parameter.email;
   var password = e.parameter.password;
 

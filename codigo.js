@@ -23,14 +23,25 @@ function doPost( e ) {
 
   //Colocando secciones para datos
   ModParagraphs(documentId);
+    
+  var curso = e.parameter.curso;
+  var tema = e.parameter.tema;
+  var docente = e.parameter.docente;
 
-  var email = e.parameter.email;
-  var password = e.parameter.password;
-
+  //Integrantes del formulario
+  /*var integranteA = e.parameter.integrante;
+  var integranteB = e.parameter.integrante;*/
+  
   // Insertar los datos en el documento
   var paras = body.getParagraphs();
-  paras[10].setText("Email: " + email);
-  paras[12].setText("Password: " + password); 
+
+  paras[8].setText(curso);
+  paras[10].setText(tema);
+  paras[12].setText(docente);
+
+  //Integrantes al texto
+  /*paras[14].setText(integranteA);
+  paras[15].setText(integranteB);*/
   
   console.log(e);
 

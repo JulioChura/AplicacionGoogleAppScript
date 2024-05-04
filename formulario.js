@@ -11,7 +11,7 @@ function agregar() {
             body += `
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nombre del integrante (Máximo 5)</label>
-                <input type="text" class="form-control" id="integrante" aria-describedby="emailHelp" name="integrante${i}>
+                <input type="text" class="form-control" id="integrante" aria-describedby="emailHelp" name="integrante${i}">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>

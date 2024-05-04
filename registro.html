@@ -9,6 +9,16 @@
 
     <div class="container">
         <h2>Registro</h2>
+        <hr>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label" >Ingrese la cantidad de integrantes (Máximo 3)</label>
+            <div style="display: flex; justify-content: center; gap: 10px;">
+              <input type="number" class="form-control" id="cantidad" name="cantidad">
+              <button type="submit" onclick="agregar()" class="btn btn-primary">Generar campos</button>
+            </div>
+        </div>
+
+
         <br/>
         <form id="formularioRegistro" name="formularioRegistro"  action="<?= pubUrl ?>" method="post" novalidate>
           <div class="mb-3">
@@ -35,9 +45,18 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
           </div>
+
+
+          
+          
+
+
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 
+    <script src="formulario.js">
+    </script>
+        
   </body>
 </html>

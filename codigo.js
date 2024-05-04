@@ -28,8 +28,9 @@ function doPost( e ) {
   var password = e.parameter.password;
 
   // Insertar los datos en el documento
-  body.appendParagraph('Email: ' + email);
-  body.appendParagraph('Password: ' + password);
+  var paras = body.getParagraphs();
+  paras[10].setText("Email: " + email);
+  paras[12].setText("Password: " + password); 
   
   console.log(e);
 

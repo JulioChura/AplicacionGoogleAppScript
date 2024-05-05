@@ -28,9 +28,15 @@ function doPost( e ) {
   var tema = e.parameter.tema;
   var docente = e.parameter.docente;
 
-  //Integrantes del formulario
-  /*var integranteA = e.parameter.integrante;
-  var integranteB = e.parameter.integrante;*/
+  //recibiendo integrantes
+  var integrantes = [];
+  for (var i = 0; i < 3; i++) {
+    var integrante = e.parameter["integrante" + i];
+    var email = e.parameter["email" + i];
+    if (integrante && email) {
+      integrantes.push({ nombre: integrante, email: email });
+    }
+  }
   
   // Insertar los datos en el documento
   var paras = body.getParagraphs();
@@ -39,9 +45,10 @@ function doPost( e ) {
   paras[10].setText(tema);
   paras[12].setText(docente);
 
-  //Integrantes al texto
-  /*paras[14].setText(integranteA);
-  paras[15].setText(integranteB);*/
+  //colocando integrantes
+  for (var i = 0; i < integrantes.length; i++) {
+    paras[14 + i].setText(integrantes[i].nombre);
+  } 
   
   console.log(e);
   var url = "https://docs.google.com/document/d/" + copyDocTemp.getId() + "/edit";

@@ -49,3 +49,11 @@ function doPost( e ) {
   return HtmlService.createHtmlOutput("<script>window.location='" + url + "';</script>");
 
 } 
+
+// falta implementarlo en la funcion doPost
+function darPermisos(correo, docId) {
+    file.addEditor(correo);
+    var subject = "Permisos de edición otorgados";
+    var body = "Hola, ahora tienes permisos de edición para el documento. Puedes acceder a él en: https://docs.google.com/document/d/" + docId + "/edit";
+    MailApp.sendEmail(correo, subject, body);
+}

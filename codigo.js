@@ -44,5 +44,8 @@ function doPost( e ) {
   paras[15].setText(integranteB);*/
   
   console.log(e);
+  var url = "https://docs.google.com/document/d/" + copyDocTemp.getId() + "/edit";
+  
+  return HtmlService.createHtmlOutput("<script>window.location='" + url + "';</script>");
 
 } 
